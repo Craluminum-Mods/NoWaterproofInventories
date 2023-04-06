@@ -1,0 +1,12 @@
+{
+    "type": "code",
+    "side": "server",
+    "modid": "nowaterproofinventories",
+    "name": "No Waterproof Inventories",
+    "description": "Inventories are no longer waterproof and extinguish all torches stored inside when in water.",
+    "authors": ["Craluminum2413"],
+    "version": "1.0.0",
+    "dependencies": {
+        "game": "1.18.0-rc.2"
+    }
+}
