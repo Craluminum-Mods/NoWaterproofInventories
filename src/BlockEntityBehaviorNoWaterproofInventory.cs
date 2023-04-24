@@ -37,6 +37,8 @@ public class BEBehaviorNoWaterproofInventory : BlockEntityBehavior
         }
     }
 
+    public override void OnBlockRemoved() => Api.World.UnregisterGameTickListener(listenerId);
+
     public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
     {
         base.GetBlockInfo(forPlayer, dsc);

@@ -1,6 +1,5 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
-using Vintagestory.API.Server;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
@@ -11,11 +10,9 @@ namespace NoWaterproofInventories;
 
 public class Core : ModSystem
 {
-    public override bool ShouldLoad(EnumAppSide forSide) => forSide == EnumAppSide.Server;
-
-    public override void StartServerSide(ICoreServerAPI api)
+    public override void Start(ICoreAPI api)
     {
-        base.StartServerSide(api);
+        base.Start(api);
         api.RegisterEntityBehaviorClass("NWI_EntityBehaviorNoWaterproofInventory", typeof(EntityBehaviorNoWaterproofInventory));
         api.RegisterBlockEntityBehaviorClass("NWI_BEBehaviorNoWaterproofInventory", typeof(BEBehaviorNoWaterproofInventory));
         api.Event.OnEntitySpawn += AddEntityBehaviors;
